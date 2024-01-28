@@ -1,8 +1,8 @@
 package com.noel.recipebook.entities;
 
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 import org.springframework.data.annotation.Id;
+
+import java.util.Arrays;
 
 public class Recipe {
     @Id
@@ -14,7 +14,7 @@ public class Recipe {
 
     private String ingredients;
 
-    private String instructions;
+    private String[] instructions;
 
     private String timeToCook;
 
@@ -35,7 +35,7 @@ public class Recipe {
             String name,
             String mainIngredient,
             String ingredients,
-            String instructions,
+            String[] instructions,
             String timeToCook,
             String timeToPrepare,
             String description,
@@ -60,7 +60,7 @@ public class Recipe {
             String name,
             String mainIngredient,
             String ingredients,
-            String instructions,
+            String[] instructions,
             String timeToCook,
             String timeToPrepare,
             String description,
@@ -111,13 +111,13 @@ public class Recipe {
         }
     }
 
-    public String getInstructions() {
+    public String[] getInstructions() {
         return instructions;
     }
 
-    public void setInstructions(String instructions) {
-        if (instructions != null && !instructions.isBlank()) {
-            this.instructions = instructions.toLowerCase();
+    public void setInstructions(String[] instructions) {
+        if (instructions != null && instructions.length != 0) {
+            this.instructions = instructions;
         }
     }
 
@@ -186,7 +186,7 @@ public class Recipe {
         return "Recipe {" +
                 "name='" + name + '\'' +
                 ", ingredients='" + ingredients + '\'' +
-                ", instructions='" + instructions + '\'' +
+                ", instructions='" + Arrays.toString(instructions) + '\'' +
                 ", timeToCook='" + timeToCook + '\'' +
                 ", timeToPrepare='" + timeToPrepare + '\'' +
                 ", description='" + description + '\'' +
