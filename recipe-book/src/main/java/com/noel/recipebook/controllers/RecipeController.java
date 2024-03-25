@@ -10,6 +10,7 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/api/recipe/")
+@CrossOrigin
 public class RecipeController {
 
     @Autowired

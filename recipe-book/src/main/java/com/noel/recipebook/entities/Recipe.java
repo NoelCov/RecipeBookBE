@@ -14,7 +14,7 @@ public class Recipe {
 
     private String ingredients;
 
-    private String[] instructions;
+    private String instructions;
 
     private String timeToCook;
 
@@ -35,7 +35,7 @@ public class Recipe {
             String name,
             String mainIngredient,
             String ingredients,
-            String[] instructions,
+            String instructions,
             String timeToCook,
             String timeToPrepare,
             String description,
@@ -60,7 +60,7 @@ public class Recipe {
             String name,
             String mainIngredient,
             String ingredients,
-            String[] instructions,
+            String instructions,
             String timeToCook,
             String timeToPrepare,
             String description,
@@ -111,12 +111,12 @@ public class Recipe {
         }
     }
 
-    public String[] getInstructions() {
+    public String getInstructions() {
         return instructions;
     }
 
-    public void setInstructions(String[] instructions) {
-        if (instructions != null && instructions.length != 0) {
+    public void setInstructions(String instructions) {
+        if (instructions != null && !instructions.isBlank()) {
             this.instructions = instructions;
         }
     }
@@ -186,7 +186,7 @@ public class Recipe {
         return "Recipe {" +
                 "name='" + name + '\'' +
                 ", ingredients='" + ingredients + '\'' +
-                ", instructions='" + Arrays.toString(instructions) + '\'' +
+                ", instructions='" + instructions + '\'' +
                 ", timeToCook='" + timeToCook + '\'' +
                 ", timeToPrepare='" + timeToPrepare + '\'' +
                 ", description='" + description + '\'' +
