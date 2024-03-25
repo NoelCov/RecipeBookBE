@@ -21,10 +21,7 @@ public class RecipeController {
         return repository.findAll();
     }
 
-    @GetMapping("name/{name}")
-    public Recipe getRecipeByName(@PathVariable String name) {
-        return repository.findByName(name.toLowerCase());
-    }
+
 
     @PostMapping
     public void addRecipe(@RequestBody Recipe recipe) {
@@ -43,6 +40,16 @@ public class RecipeController {
     @DeleteMapping
     public void deleteAll() {
         repository.deleteAll();
+    }
+
+    @GetMapping("name/{name}")
+    public Recipe getRecipeByName(@PathVariable String name) {
+        return repository.findByName(name.toLowerCase());
+    }
+
+    @DeleteMapping("name/{name}")
+    public void deleteRecipeByName(@PathVariable String name){
+        repository.deleteByName(name);
     }
 
     @PutMapping("name/{name}")

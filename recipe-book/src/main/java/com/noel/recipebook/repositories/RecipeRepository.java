@@ -15,4 +15,6 @@ public interface RecipeRepository extends MongoRepository<Recipe, String> {
     public List<Recipe> findByMacros(int calories, int fats, int protein, int carbs);
 
     public List<Recipe> findBytimeToCook(String timeToCook);
+
+    public void deleteByName(String name);
 }
